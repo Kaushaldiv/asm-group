@@ -1,0 +1,2018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASM Group of Institutes | KG to PG Education | Pune</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+  :root {
+    --blue-deep: #0a2d6e;
+    --blue-main: #1a56c4;
+    --blue-mid: #2563eb;
+    --blue-light: #3b82f6;
+    --blue-pale: #dbeafe;
+    --blue-ultra: #eff6ff;
+
+    --white: #ffffff;
+    --off-white: #f8faff;
+
+    --gray-100: #f1f5f9;
+    --gray-300: #cbd5e1;
+    --gray-500: #64748b;
+    --gray-700: #334155;
+    --gray-900: #0f172a;
+
+    --gold: #f59e0b;
+
+    /* Professional Fonts */
+    --font-head: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Manrope', sans-serif;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--gray-900);
+    background: var(--white);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+
+  /* ── TOPBAR ── */
+  .topbar {
+    background: var(--blue-deep);
+    color: rgba(255,255,255,0.85);
+    font-size: 12.5px;
+    padding: 7px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    letter-spacing: 0.01em;
+    flex-wrap: wrap;
+  }
+  .topbar a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .topbar a:hover { color: var(--gold); }
+  .topbar-item { display: flex; align-items: center; gap: 6px; }
+  .topbar-dot { width: 3px; height: 3px; background: rgba(255,255,255,0.3); border-radius: 50%; }
+
+  /* ── HEADER ── */
+  /* ── HEADER ── */
+  header {
+    background: var(--white);
+    box-shadow: 0 2px 20px rgba(10,45,110,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+  }
+  .logo-img{
+    height:70px;
+    width:auto;
+    max-width:120px; /* IMPORTANT */
+    object-fit:contain;
+}
+  .logo-wrap { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .logo-icon {
+    width: 52px; height: 52px;
+    background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-main) 100%);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-head);
+    color: var(--white);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    flex-shrink: 0;
+  }
+  .logo-text { display: flex; flex-direction: column; }
+  .logo-name { font-family: var(--font-head); font-size: 19px; font-weight: 700; color: var(--blue-deep); line-height: 1.1; }
+  .logo-sub { font-size: 10.5px; color: var(--blue-main); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px; }
+ 
+  nav { display: flex; align-items: center; gap: 4px; }
+  .nav-item { position: relative; }
+  .nav-link {
+    display: flex; align-items: center; gap: 4px;
+    padding: 8px 14px;
+    font-size: 14px; font-weight: 500;
+    color: var(--gray-700);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s;
+    cursor: pointer;
+    white-space: nowrap;
+    background: none; border: none;
+  }
+  .nav-link:hover, .nav-link.active { color: var(--blue-main); background: var(--blue-ultra); }
+  .nav-arrow { font-size: 10px; transition: transform 0.2s; }
+  .nav-item:hover .nav-arrow { transform: rotate(180deg); }
+ 
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    background: var(--white);
+    border: 1px solid var(--blue-pale);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(10,45,110,0.18);
+    min-width: 260px;
+    padding: 8px;
+    z-index: 100;
+  }
+  .nav-item:hover .dropdown { display: block; animation: fadeDown 0.18s ease; }
+  @keyframes fadeDown { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+  .dropdown-section { font-size: 11px; font-weight: 600; color: var(--blue-main); letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 12px 4px; }
+  .dropdown a {
+    display: block; padding: 8px 12px; font-size: 13.5px; color: var(--gray-700);
+    text-decoration: none; border-radius: 7px; transition: all 0.15s;
+  }
+  .dropdown a:hover { background: var(--blue-ultra); color: var(--blue-deep); padding-left: 16px; }
+  .dropdown-divider { height: 1px; background: var(--gray-100); margin: 6px 0; }
+ 
+  .header-cta {
+    background: var(--blue-main);
+    color: var(--white);
+    padding: 10px 22px;
+    border-radius: 9px;
+    font-size: 14px; font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    margin-left: 8px;
+    white-space: nowrap;
+  }
+  .header-cta:hover { background: var(--blue-deep); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(26,86,196,0.35); }
+  /* ── HERO SLIDER ── */
+  .hero {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+  }
+  .slide {
+    position: absolute; inset: 0;
+    display: flex; align-items: center;
+    opacity: 0;
+    transition: opacity 0.9s ease;
+    pointer-events: none;
+  }
+  .slide.active { opacity: 1; pointer-events: auto; }
+  .slide-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+  }
+  .slide-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(105deg, rgba(10,45,110,0.88) 0%, rgba(10,45,110,0.55) 55%, rgba(10,45,110,0.2) 100%);
+  }
+ .slide-1 .slide-bg {
+    background: url('image/ChatGPT\ Image\ May\ 29\,\ 2026\,\ 01_33_52\ PM.png') center center/cover no-repeat;
+}
+
+.slide-2 .slide-bg {
+    background: url('image/ChatGPT\ Image\ May\ 29\,\ 2026\,\ 01_33_52\ PM.png') center center/cover no-repeat;
+}
+
+.slide-3 .slide-bg {
+    background: url('image/ChatGPT\ Image\ May\ 29\,\ 2026\,\ 01_33_52\ PM.png') center center/cover no-repeat;
+}
+  .slide-content {
+    position: relative; z-index: 2;
+    max-width: 1280px; margin: 0 auto; padding: 0 28px;
+    color: var(--white);
+  }
+  .slide-badge {
+    display: inline-block;
+    background: rgba(245,158,11,0.9);
+    color: var(--white);
+    font-size: 12px; font-weight: 600;
+    padding: 5px 14px; border-radius: 20px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .slide-title {
+    font-family: var(--font-head);
+    font-size: clamp(32px, 5vw, 54px);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    max-width: 640px;
+  }
+  .slide-sub {
+    font-size: 17px; color: rgba(255,255,255,0.85);
+    line-height: 1.6; max-width: 500px; margin-bottom: 34px;
+  }
+  .slide-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--white);
+    color: var(--blue-deep);
+    padding: 13px 28px; border-radius: 9px;
+    font-size: 15px; font-weight: 600;
+    text-decoration: none;
+    transition: all 0.22s;
+  }
+  .btn-primary:hover { background: var(--gold); color: var(--white); transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.65);
+    color: var(--white);
+    padding: 13px 28px; border-radius: 9px;
+    font-size: 15px; font-weight: 500;
+    text-decoration: none;
+    transition: all 0.22s;
+  }
+  .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.12); }
+
+  /* Slider controls */
+  .slider-nav {
+    position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+    display: flex; align-items: center; gap: 10px; z-index: 10;
+  }
+  .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.45);
+    cursor: pointer; transition: all 0.25s;
+    border: none;
+  }
+  .dot.active { background: var(--white); width: 24px; border-radius: 4px; }
+  .slider-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 48px; height: 48px;
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 22px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; z-index: 10;
+    transition: all 0.2s;
+    backdrop-filter: blur(4px);
+  }
+  .slider-arrow:hover { background: rgba(255,255,255,0.28); border-color: var(--white); }
+  .arrow-left { left: 24px; }
+  .arrow-right { right: 24px; }
+
+  /* Floating stat bar */
+  .stat-bar {
+    background: var(--white);
+    box-shadow: 0 8px 40px rgba(10,45,110,0.14);
+    margin: -44px auto 0;
+    max-width: 1300px; /* 1100 se 1300 */
+    width: 92%;
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+}
+
+.stat-item {
+    padding: 35px 25px;
+    text-align: center;
+    border-right: 1px solid #e5e7eb;
+}
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+.stat-num {
+  font-family: var(--font-head);  
+  font-weight: 700;  
+    font-size: 54px;
+
+    color: #1a56c4;
+    line-height: 1;
+}
+
+.stat-num sup {
+    font-size: 24px;
+}
+
+.stat-label {
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #6b7280;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .stat-bar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-num {
+        font-size: 42px;
+    }
+
+    .stat-label {
+        font-size: 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .stat-bar {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+
+    .stat-item {
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+
+    .stat-num {
+        font-size: 38px;
+    }
+
+    .stat-label {
+        font-size: 14px;
+    }
+}
+
+  /* ── SECTIONS ── */
+  .section { padding: 80px 28px; }
+  .section-inner { max-width: 1280px; margin: 0 auto; }
+  .section-alt { background: var(--off-white); }
+  .section-blue { background: var(--blue-deep); }
+  .section-head {
+    text-align: center; margin-bottom: 54px;
+  }
+  .section-tag {
+    display: inline-block;
+    background: var(--blue-pale);
+    color: var(--blue-main);
+    font-size: 12px; font-weight: 600;
+    padding: 5px 14px; border-radius: 20px;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .section-title {
+    font-family: var(--font-head);
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 700;
+    color: var(--blue-deep);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .section-sub {
+    font-size: 16.5px; color: var(--gray-500);
+    max-width: 580px; margin: 0 auto;
+    line-height: 1.7;
+  }
+  .section-blue .section-title { color: var(--white); }
+  .section-blue .section-sub { color: rgba(255,255,255,0.7); }
+  .section-blue .section-tag { background: rgba(255,255,255,0.15); color: var(--white); }
+
+  /* ── INSTITUTES ── */
+ .institutes-grid{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.institutes-row{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.institute-card{
+    width:250px;
+    background:var(--white);
+    border:1.5px solid var(--blue-pale);
+    border-radius:14px;
+    padding:28px 22px;
+    text-align:center;
+    text-decoration:none;
+    display:block;
+    transition:all .3s ease;
+}
+
+.institute-card:hover{
+    border-color:var(--blue-main);
+    transform:translateY(-5px);
+    box-shadow:0 16px 44px rgba(26,86,196,.15);
+}
+
+.inst-icon{
+    width:80px;
+    height:80px;
+    margin:0 auto 16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.inst-icon img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    transition:transform .3s ease;
+}
+
+.institute-card:hover .inst-icon img{
+    transform:scale(1.08);
+}
+
+.inst-name{
+    font-size:16px;
+    font-weight:700;
+    color:var(--blue-deep);
+    margin-bottom:8px;
+}
+
+.inst-full{
+    font-size:13px;
+    color:var(--gray-500);
+    line-height:1.6;
+}
+
+@media (max-width:992px){
+    .institutes-row{
+        flex-wrap:wrap;
+    }
+
+    .institute-card{
+        width:220px;
+    }
+}
+
+@media (max-width:768px){
+    .institute-card{
+        width:100%;
+        max-width:320px;
+    }
+}
+
+  /* ── PROGRAMS ── */
+  .programs-tabs { display: flex; gap: 10px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap; }
+  .tab-btn {
+    padding: 10px 22px; border-radius: 9px;
+    font-size: 14px; font-weight: 600;
+    border: 2px solid var(--blue-pale);
+    background: var(--white);
+    color: var(--gray-500);
+    cursor: pointer; transition: all 0.2s;
+  }
+  .tab-btn.active { background: var(--blue-main); color: var(--white); border-color: var(--blue-main); }
+  .tab-btn:hover:not(.active) { border-color: var(--blue-main); color: var(--blue-main); }
+
+  .programs-panel { display: none; }
+  .programs-panel.active { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+  .prog-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 12px;
+    padding: 20px 22px;
+    transition: all 0.22s;
+    border-left: 4px solid var(--blue-main);
+  }
+  .prog-card:hover { box-shadow: 0 8px 28px rgba(26,86,196,0.12); transform: translateX(4px); }
+  .prog-name { font-size: 15px; font-weight: 600; color: var(--blue-deep); margin-bottom: 6px; }
+  .prog-inst { font-size: 12.5px; color: var(--gray-500); display: flex; align-items: center; gap: 6px; }
+  .prog-badge {
+    display: inline-block; padding: 3px 10px;
+    background: var(--blue-ultra); color: var(--blue-main);
+    border-radius: 5px; font-size: 11px; font-weight: 600;
+    margin-top: 10px; text-transform: uppercase; letter-spacing: 0.05em;
+  }
+
+  /* ── WHY ASM ── */
+  .why-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 54px; align-items: center;
+  }
+  .why-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+  .why-item { display: flex; align-items: flex-start; gap: 18px; }
+  .why-check {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: var(--blue-main);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--white); font-size: 18px;
+  }
+  .why-text-title { font-size: 15px; font-weight: 600; color: var(--blue-deep); margin-bottom: 4px; }
+  .why-text-body { font-size: 13.5px; color: var(--gray-500); line-height: 1.6; }
+  .why-visual {
+       background: linear-gradient(135deg, #f0f7ff 0%, #cfe3ff 100%);
+
+    border-radius: 20px;
+    padding: 44px 36px;
+    color: #0a2d6e;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.why-stat-label{
+    color:#4b5563;
+}
+  .why-stat { text-align: center; }
+  .why-stat-num {
+    font-family: var(--font-head);
+    font-size: 40px; font-weight: 700;
+    line-height: 1;
+  }
+  /* .why-stat-label { font-size: 13px; color: rgba(255,255,255,0.75); margin-top: 6px; line-height: 1.4; } */
+
+  /* ── AWARDS ── */
+  .awards-slider-wrap { position: relative; overflow: hidden; }
+  .awards-track {
+    display: flex; gap: 20px;
+    transition: transform 0.5s ease;
+  }
+  .award-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 14px;
+    padding: 28px 26px;
+    min-width: 280px;
+    flex-shrink: 0;
+    text-align: center;
+  }
+  .award-icon{
+    width:72px;
+    height:72px;
+    margin:0 auto 18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#f8fbff;
+    border:2px solid #dbeafe;
+    transition:all .3s ease;
+}
+
+.award-icon i{
+    font-size:30px;
+    color:#e8aa45;
+    transition:all .3s ease;
+}
+
+.award-card:hover .award-icon{
+    border-color:#C8922A;
+    transform:translateY(-3px);
+}
+
+.award-card:hover .award-icon i{
+    transform:scale(1.1);
+}
+  .award-star { font-size: 32px; margin-bottom: 14px; color: var(--gold); }
+  .award-title { font-size: 14px; font-weight: 600; color: var(--white); line-height: 1.5; margin-bottom: 8px; }
+  .award-by { font-size: 12px; color: rgba(255,255,255,0.55); }
+  .awards-arrows { display: flex; gap: 10px; justify-content: center; margin-top: 28px; }
+  .aw-arrow {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.08);
+    color: var(--white); font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .aw-arrow:hover { background: rgba(255,255,255,0.18); }
+
+  /* ── PARTNERS ── */
+ .partners-track-wrap {
+    overflow: hidden;
+}
+
+.partners-track {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+    animation: scrollPartners 22s linear infinite;
+    white-space: nowrap;
+}
+
+.partners-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollPartners {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.partner-logo {
+    background: var(--white);
+    border: 1.5px solid var(--gray-100);
+    border-radius: 10px;
+    padding: 14px 28px;
+    width: 180px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s;
+    flex-shrink: 0;
+}
+
+.partner-logo:hover {
+    border-color: var(--blue-main);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(26,86,196,0.12);
+}
+
+.partner-logo img {
+    max-width: 140px;
+    max-height: 60px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+  /* ── EVENTS ── */
+  /* ===== EVENTS REDESIGN ===== */
+
+.events-grid{
+    display:grid !important;
+    grid-template-columns:repeat(3,1fr) !important;
+    gap:30px !important;
+}
+
+.event-card{
+    background:#fff !important;
+    border:none !important;
+    border-radius:20px !important;
+    overflow:hidden !important;
+    box-shadow:0 15px 40px rgba(0,0,0,.08) !important;
+    transition:.4s ease !important;
+}
+
+.event-card:hover{
+    transform:translateY(-10px) !important;
+    box-shadow:0 25px 60px rgba(26,86,196,.18) !important;
+}
+
+.event-img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  display:block;
+}
+
+.event-img img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    transition:.6s !important;
+    display:block !important;
+}
+
+.event-card:hover .event-img img{
+    transform:scale(1.08) !important;
+}
+
+.event-body{
+    padding:25px !important;
+}
+
+.event-name{
+    font-size:24px !important;
+    font-weight:700 !important;
+    color:#0a2d6e !important;
+    margin-bottom:12px !important;
+}
+
+.event-desc{
+    font-size:15px !important;
+    line-height:1.8 !important;
+    color:#64748b !important;
+    margin-bottom:20px !important;
+}
+
+.event-link{
+    display:inline-block !important;
+    background:#1a56c4 !important;
+    color:#fff !important;
+    text-decoration:none !important;
+    padding:12px 22px !important;
+    border-radius:8px !important;
+    font-size:15px !important;
+    font-weight:600 !important;
+}
+
+.event-link:hover{
+    background:#0a2d6e !important;
+}
+
+@media(max-width:991px){
+    .events-grid{
+        grid-template-columns:1fr !important;
+    }
+}
+
+  /* ── TESTIMONIALS ── */
+  .testi-slider { position: relative; }
+  .testi-wrap { overflow: hidden; }
+  .testi-track {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  .testi-card {
+    min-width: 100%;
+    padding: 44px 48px;
+    background: var(--white);
+    border-radius: 20px;
+    border: 1.5px solid var(--blue-pale);
+    position: relative;
+  }
+  .testi-quote {
+    font-size: 60px; font-family: var(--font-head);
+    color: var(--blue-pale);
+    line-height: 0.7;
+    position: absolute; top: 24px; left: 36px;
+  }
+  .testi-text {
+    font-size: 16px; color: var(--gray-700);
+    line-height: 1.75; margin-bottom: 24px; padding-top: 24px;
+    font-style: italic;
+  }
+  .testi-author { display: flex; align-items: center; gap: 14px; }
+  .testi-avatar {
+    width: 52px; height: 52px;
+    background: var(--blue-main);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; color: var(--white);
+    font-family: var(--font-head); font-weight: 700;
+  }
+  .testi-name { font-size: 15px; font-weight: 600; color: var(--blue-deep); }
+  .testi-role { font-size: 13px; color: var(--gray-500); }
+  .testi-dots { display: flex; gap: 8px; justify-content: center; margin-top: 22px; }
+  .testi-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue-pale); cursor: pointer; border: none; transition: all 0.25s; }
+  .testi-dot.active { background: var(--blue-main); width: 22px; border-radius: 4px; }
+
+  /* ── NEWS ── */
+  .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+  .news-card {
+    background: var(--white); border: 1px solid var(--gray-100); border-radius: 14px;
+    padding: 28px; transition: all 0.22s;
+  }
+  .news-card:hover { box-shadow: 0 12px 36px rgba(10,45,110,0.1); transform: translateY(-3px); }
+  .news-date { font-size: 12px; color: var(--blue-main); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+  .news-title { font-size: 16px; font-weight: 600; color: var(--blue-deep); line-height: 1.45; margin-bottom: 10px; }
+  .news-body { font-size: 13.5px; color: var(--gray-500); line-height: 1.65; }
+
+  /* ── CONTACT / FORM ── */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .contact-info { display: flex; flex-direction: column; gap: 24px; }
+  .ci-item { display: flex; gap: 16px; align-items: flex-start; }
+  .ci-icon {
+    width: 46px; height: 46px; flex-shrink: 0;
+    background: var(--blue-ultra); border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+  }
+  .ci-label { font-size: 12px; font-weight: 600; color: var(--blue-main); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+  .ci-value { font-size: 14.5px; color: var(--gray-700); line-height: 1.6; }
+  .ci-value a { color: var(--blue-main); text-decoration: none; }
+  .form-card {
+    background: var(--white);
+    border: 1.5px solid var(--blue-pale);
+    border-radius: 18px;
+    padding: 36px;
+    box-shadow: 0 8px 40px rgba(26,86,196,0.08);
+  }
+  .form-title { font-family: var(--font-head); font-size: 22px; font-weight: 700; color: var(--blue-deep); margin-bottom: 6px; }
+  .form-sub { font-size: 14px; color: var(--gray-500); margin-bottom: 26px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-group { margin-bottom: 16px; }
+  .form-label { display: block; font-size: 13px; font-weight: 500; color: var(--gray-700); margin-bottom: 6px; }
+  .form-control {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--gray-300);
+    border-radius: 9px;
+    font-size: 14px; font-family: var(--font-body);
+    color: var(--gray-900);
+    outline: none;
+    transition: border-color 0.2s;
+    background: var(--white);
+  }
+  .form-control:focus { border-color: var(--blue-main); box-shadow: 0 0 0 3px rgba(37,99,235,0.12); }
+  select.form-control { cursor: pointer; }
+  .btn-submit {
+    width: 100%;
+    background: var(--blue-main);
+    color: var(--white);
+    border: none;
+    padding: 14px;
+    border-radius: 9px;
+    font-size: 15px; font-weight: 600;
+    font-family: var(--font-body);Get In Touch
+    cursor: pointer;
+    transition: all 0.22s;
+    margin-top: 4px;
+  }
+  .btn-submit:hover { background: var(--blue-deep); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,86,196,0.35); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--blue-deep);
+    color: rgba(255,255,255,0.8);
+    padding: 64px 28px 28px;
+  }
+  .footer-inner { max-width: 1280px; margin: 0 auto; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+  .footer-brand-name { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+  .footer-brand-sub { font-size: 13px; line-height: 1.7; margin-bottom: 20px; }
+  .footer-socials { display: flex; gap: 10px; }
+  .social-btn {
+    width: 38px; height: 38px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--white); font-size: 18px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .social-btn:hover { background: var(--blue-main); transform: translateY(-2px); }
+  .footer-col-title { font-size: 13px; font-weight: 700; color: var(--white); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 18px; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 13.5px; transition: color 0.15s; }
+  .footer-links a:hover { color: var(--white); padding-left: 4px; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 12.5px; color: rgba(255,255,255,0.45);
+    flex-wrap: wrap; gap: 12px;
+  }
+
+  /* ── ANNOUNCEMENT BAR ── */
+  .announce {
+    background: var(--gold);
+    color: var(--white);
+    text-align: center;
+    padding: 11px 16px;
+    font-size: 13.5px; font-weight: 500;
+  }
+  .announce a { color: var(--white); font-weight: 700; text-decoration: underline; margin-left: 6px; }
+
+  /* ── MOBILE NAV ── */
+  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; color: var(--blue-deep); font-size: 26px; }
+  .mobile-menu {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(10,45,110,0.97);
+    z-index: 2000;
+    padding: 28px;
+    overflow-y: auto;
+  }
+  .mobile-menu.open { display: block; }
+  .mob-close { background: none; border: none; color: var(--white); font-size: 30px; cursor: pointer; float: right; }
+  .mob-link { display: block; color: rgba(255,255,255,0.9); text-decoration: none; font-size: 18px; font-weight: 500; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    nav { display: none; }
+    .hamburger { display: block; }
+    .hero { height: 500px; }
+    .stat-bar { grid-template-columns: 1fr 1fr; margin: 0 16px; }
+    .why-grid, .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .testi-card { padding: 30px 24px; }
+    .topbar { gap: 14px; }
+  }
+  @media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .stat-bar { grid-template-columns: 1fr 1fr; border-radius: 12px; }
+    .stat-item { padding: 18px 12px; }
+    .stat-num { font-size: 26px; }
+    .section { padding: 54px 16px; }
+    .slide-content { padding: 0 16px; }
+    .hero { height: 480px; }
+    .slider-arrow { display: none; }
+    .why-visual { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Animations */
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+<style>
+  /* Paste at end of CSS */
+
+/* Hero */
+.slide-sub{
+    font-size:19px !important;
+}
+
+/* Section Description */
+.section-sub{
+    font-size:17px !important;
+}
+
+/* Institute Cards */
+.inst-name{
+    font-size:17px !important;
+}
+
+.inst-full{
+    font-size:13px !important;
+}
+
+/* Programs */
+.prog-name{
+    font-size:16px !important;
+}
+
+.prog-inst{
+    font-size:13px !important;
+}
+
+/* Why ASM */
+.why-text-title{
+    font-size:17px !important;
+}
+
+.why-text-body{
+    font-size:15px !important;
+}
+
+/* Events */
+.event-name{
+    font-size:17px !important;
+}
+
+.event-desc{
+    font-size:14px !important;
+}
+
+
+/* News */
+.news-title{
+    font-size:17px !important;
+}
+
+.news-body{
+    font-size:14px !important;
+}
+
+/* Contact */
+.ci-value{
+    font-size:15px !important;
+}
+
+/* Form */
+.form-label{
+    font-size:14px !important;
+}
+
+.form-control{
+    font-size:14px !important;
+}
+
+.btn-submit{
+    font-size:16px !important;
+}
+
+/* Footer */
+.footer-brand-sub,
+.footer-links a{
+    font-size:14px !important;
+}
+</style>
+</head>
+<body>
+
+<!-- Announcement -->
+<div class="announce">
+   Admissions Open for 2025–26 — MBA, PGDM, MCA, B.E and more!
+  <a href="#contact">Apply Now →</a>
+</div>
+
+<!-- Top Bar -->
+<div class="topbar">
+  <span class="topbar-item"> +91-20-27475090 | 9422009207</span>
+  <span class="topbar-dot"></span>
+  <span class="topbar-item">enquiry@asmedu.org</span>
+  <span class="topbar-dot"></span>
+  <span class="topbar-item"> MIDC Block C, Chinchwad, Pune 411019</span>
+</div>
+
+<!-- Header -->
+ <header>
+  <div class="header-inner">
+
+    <a href="#" class="logo-wrap">
+      <img src="image/All Logo File.png" alt="ASM Group Logo" class="logo-img">
+       <div class="logo-text">
+        <span class="logo-name">ASM Group</span>
+        <span class="logo-sub">KG to PG Education</span>
+      </div>
+    </a>
+
+    <nav>
+      <div class="nav-item">
+        <a href="#" class="nav-link active">Home</a>
+      </div>
+      <div class="nav-item">
+        <a href="#about" class="nav-link">About Us</a>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link">Programs <span class="nav-arrow">▾</span></button>
+        <div class="dropdown">
+          <div class="dropdown-section">Under Graduate</div>
+          <a href="#">BBA — Business Administration</a>
+          <a href="#">BCA — Computer Applications</a>
+          <a href="#">B.E — AI & Machine Learning</a>
+          <a href="#">B.E — Computer Science</a>
+          <a href="#">B.Sc — Computer Science</a>
+          <a href="#">B.Sc — Cyber Security</a>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-section">Post Graduate</div>
+          <a href="#">MBA — Business Administration</a>
+          <a href="#">MCA — Computer Applications</a>
+          <a href="#">M.Sc — Data Science</a>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-section">PGDM</div>
+          <a href="#">PGDM — Marketing + AI</a>
+          <a href="#">PGDM — Human Resources + AI</a>
+          <a href="#">PGDM — Business Analytics + AI</a>
+          <a href="#">PGDM — Finance</a>
+          <a href="#">Ph.D — Management</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link">Institutes <span class="nav-arrow">▾</span></button>
+        <div class="dropdown">
+          <a href="#">IBMR — Chinchwad</a>
+          <a href="#">IIBR — Chinchwad</a>
+          <a href="#">IPS — Chinchwad</a>
+          <a href="#">NEXTGEN TECHNICAL CAMPUS — Talegaon</a>
+          <a href="#">CSIT — Chinchwad</a>
+          <a href="#">GEMS School</a>
+          <a href="#">EMPROS</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#events" class="nav-link">Events</a>
+      </div>
+      <div class="nav-item">
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </nav>
+
+    <a href="#contact" class="header-cta">Enquire Now</a>
+
+    <button class="hamburger">☰</button>
+
+  </div>
+</header>
+
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mob-close" onclick="toggleMobileMenu()">✕</button>
+  <div style="clear:both; padding-top: 40px;">
+    <a href="#" class="mob-link" onclick="toggleMobileMenu()">Home</a>
+    <a href="#about" class="mob-link" onclick="toggleMobileMenu()">About Us</a>
+    <a href="#programs" class="mob-link" onclick="toggleMobileMenu()">Programs</a>
+    <a href="#institutes" class="mob-link" onclick="toggleMobileMenu()">Institutes</a>
+    <a href="#events" class="mob-link" onclick="toggleMobileMenu()">Events</a>
+    <a href="#contact" class="mob-link" onclick="toggleMobileMenu()">Contact</a>
+    <a href="#contact" class="mob-link" onclick="toggleMobileMenu()" style="color: #f59e0b; font-weight: 700;">Apply Now →</a>
+  </div>
+</div>
+
+<!-- Hero Slider -->
+<section class="hero" id="hero">
+  <div class="slide slide-1 active">
+    <div class="slide-bg"></div>
+    <div class="slide-content">
+      <div class="slide-badge">42+ Years of Excellence</div>
+      <h1 class="slide-title">Shaping Leaders for a Global Tomorrow</h1>
+      <p class="slide-sub">AICTE-approved management and technical institutes in Pune offering MBA, PGDM, MCA, B.E and more under one roof.</p>
+      <div class="slide-btns">
+        <a href="#programs" class="btn-primary">Explore Programs</a>
+        <a href="#contact" class="btn-outline">Apply Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="slide slide-2">
+    <div class="slide-bg"></div>
+    <div class="slide-content">
+      <div class="slide-badge">IIRF Top 50 B-School 2025</div>
+      <h1 class="slide-title">ASM INCON 2026 — International Conference</h1>
+      <p class="slide-sub">Audyogik Shikshan Mandal announces ASM INCON 2026 — a premier international academic conference bringing global minds together.</p>
+      <div class="slide-btns">
+        <a href="#news" class="btn-primary">Know More</a>
+        <a href="#contact" class="btn-outline">Register</a>
+      </div>
+    </div>
+  </div>
+  <div class="slide slide-3">
+    <div class="slide-bg"></div>
+    <div class="slide-content">
+      <div class="slide-badge">75,000+ Global Alumni</div>
+      <h1 class="slide-title">From Pune to the World — 250+ Top Recruiters</h1>
+      <p class="slide-sub">A vibrant placement ecosystem connecting ASM graduates to leading companies across 60+ countries worldwide.</p>
+      <div class="slide-btns">
+        <a href="#why" class="btn-primary">Why Choose ASM</a>
+        <a href="#contact" class="btn-outline">Talk to Us</a>
+      </div>
+    </div>
+  </div>
+  <button class="slider-arrow arrow-left" onclick="heroSlide(-1)">‹</button>
+  <button class="slider-arrow arrow-right" onclick="heroSlide(1)">›</button>
+  <div class="slider-nav">
+    <button class="dot active" onclick="heroGoTo(0)"></button>
+    <button class="dot" onclick="heroGoTo(1)"></button>
+    <button class="dot" onclick="heroGoTo(2)"></button>
+  </div>
+</section>
+
+<!-- Stat Bar -->
+<div class="stat-bar fade-in">
+
+  <div class="stat-item">
+    <div class="stat-num" data-target="42">0<sup>+</sup></div>
+    <div class="stat-label">Years of Rich Legacy</div>
+  </div>
+
+  <div class="stat-item">
+    <div class="stat-num" data-target="75000">0<sup>+</sup></div>
+    <div class="stat-label">Global Alumni Network</div>
+  </div>
+
+  <div class="stat-item">
+    <div class="stat-num" data-target="250">0<sup>+</sup></div>
+    <div class="stat-label">Top Recruiters</div>
+  </div>
+
+  <div class="stat-item">
+    <div class="stat-num" data-target="12">0<sup>+</sup></div>
+    <div class="stat-label">Reputed Institutes</div>
+  </div>
+
+</div>
+
+
+<!-- Institutes -->
+
+<section class="section" id="institutes">
+  <div class="section-inner">
+
+    <div class="section-head fade-in">
+      <div class="section-tag">Our Institutes</div>
+      <h2 class="section-title">KG to PG Education — Under One Roof</h2>
+      <p class="section-sub">
+        A family of 12+ reputed institutions catering to every stage of academic life,
+        from school to doctoral research.
+      </p>
+    </div>
+
+    <div class="institutes-grid fade-in">
+
+      <!-- Row 1 -->
+      <div class="institutes-row">
+
+        <a href="https://www.asmibmr.edu.in/" target="_blank" class="institute-card">
+          <div class="inst-icon">
+            <img src="image/All Logo File.png" alt="IBMR Logo">
+          </div>
+          <div class="inst-name">IBMR</div>
+          <div class="inst-full">Institute of Business Management & Research — Chinchwad</div>
+        </a>
+
+        <a href="https://www.iibr.edu.in" target="_blank" class="institute-card">
+          <div class="inst-icon">
+            <img src="image/IIBR Logo 200x200 PNG.png" alt="IIBR Logo">
+          </div>
+          <div class="inst-name">IIBR</div>
+          <div class="inst-full">International Institute of Business Research — Chinchwad</div>
+        </a>
+
+        <a href="https://www.ips.edu.in/" target="_blank" class="institute-card">
+          <div class="inst-icon">
+            <img src="image/IPS Logo (1).png" alt="IPS Logo">
+          </div>
+          <div class="inst-name">IPS</div>
+          <div class="inst-full">Institute of Professional Studies — Chinchwad</div>
+        </a>
+
+        <a href="https://www.asmnext.edu.in/" target="_blank" class="institute-card">
+          <div class="inst-icon">
+            <img src="image/NEXT-Logo.png" alt="NEXTGEN Logo">
+          </div>
+          <div class="inst-name">NEXTGEN</div>
+          <div class="inst-full">ASM Nextgen Technical Campus — Talegaon Dabhade</div>
+        </a>
+
+      </div>
+
+      <!-- Row 2 -->
+      <div class="institutes-row">
+
+        <a href="https://www.csit.edu.in/" target="_blank" class="institute-card">
+          <div class="inst-icon">
+            <img src="image/ASM logos-02.png" alt="CSIT Logo">
+          </div>
+          <div class="inst-name">CSIT</div>
+          <div class="inst-full">College of Science IT & Management — Chinchwad</div>
+        </a>
+
+        <a href="#" class="institute-card">
+          <div class="inst-icon">
+            <img src="image/GJC-Logo.jpg.jpeg" alt="GEMS Logo">
+          </div>
+          <div class="inst-name">GEMS</div>
+          <div class="inst-full">School of Excellence — Pune</div>
+        </a>
+
+        <a href="https://asmempros.com/" target="_blank" class="institute-card">
+          <div class="inst-icon">
+            <img src="image/1.png" alt="EMPROS Logo">
+          </div>
+          <div class="inst-name">EMPROS</div>
+          <div class="inst-full">Empowerment Programs & Solutions</div>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Programs -->
+<section class="section section-alt" id="programs">
+  <div class="section-inner">
+    <div class="section-head fade-in">
+      <div class="section-tag">Academic Programs</div>
+      <h2 class="section-title">Find Your Perfect Program</h2>
+      <p class="section-sub">Over 40 programs spanning management, technology, and sciences — designed for the careers of tomorrow.</p>
+    </div>
+    <div class="programs-tabs fade-in">
+      <button class="tab-btn active" onclick="showTab('ug')">Under Graduate</button>
+      <button class="tab-btn" onclick="showTab('pg')">Post Graduate</button>
+      <button class="tab-btn" onclick="showTab('pgdm')">PGDM</button>
+      <button class="tab-btn" onclick="showTab('phd')">Ph.D</button>
+    </div>
+    <div id="tab-ug" class="programs-panel active fade-in">
+      <div class="prog-card"><div class="prog-name">BBA — Business Administration</div><div class="prog-inst">📍 CSIT, Chinchwad</div><span class="prog-badge">3 Years</span></div>
+      <div class="prog-card"><div class="prog-name">BBA (IB) — International Business</div><div class="prog-inst">📍 CSIT, Chinchwad</div><span class="prog-badge">3 Years</span></div>
+      <div class="prog-card"><div class="prog-name">BCA — Computer Applications</div><div class="prog-inst">📍 CSIT &amp; ASMNEXT</div><span class="prog-badge">3 Years</span></div>
+      <div class="prog-card"><div class="prog-name">B.E — AI &amp; Machine Learning</div><div class="prog-inst">📍 ASMNEXT, Talegaon</div><span class="prog-badge">4 Years</span></div>
+      <div class="prog-card"><div class="prog-name">B.E — Computer Science &amp; Engineering</div><div class="prog-inst">📍 ASMNEXT, Talegaon</div><span class="prog-badge">4 Years</span></div>
+      <div class="prog-card"><div class="prog-name">B.E — Information Technology</div><div class="prog-inst">📍 ASMNEXT, Talegaon</div><span class="prog-badge">4 Years</span></div>
+      <div class="prog-card"><div class="prog-name">B.Sc — Computer Science</div><div class="prog-inst">📍 CSIT, Chinchwad</div><span class="prog-badge">3 Years</span></div>
+      <div class="prog-card"><div class="prog-name">B.Sc — Cyber Security</div><div class="prog-inst">📍 CSIT, Chinchwad</div><span class="prog-badge">3 Years</span></div>
+      <div class="prog-card"><div class="prog-name">B.Sc — Animation</div><div class="prog-inst">📍 CSIT, Chinchwad</div><span class="prog-badge">3 Years</span></div>
+    </div>
+    <div id="tab-pg" class="programs-panel">
+      <div class="prog-card"><div class="prog-name">MBA — Business Administration</div><div class="prog-inst">📍 IBMR &amp; IPS, Chinchwad</div><span class="prog-badge">2 Years</span></div>
+      <div class="prog-card"><div class="prog-name">MCA — Computer Applications</div><div class="prog-inst">📍 IBMR &amp; ASMNEXT</div><span class="prog-badge">2 Years</span></div>
+      <div class="prog-card"><div class="prog-name">M.Sc — Computer Science</div><div class="prog-inst">📍 CSIT, Chinchwad</div><span class="prog-badge">2 Years</span></div>
+      <div class="prog-card"><div class="prog-name">M.Sc — Data Science</div><div class="prog-inst">📍 CSIT, Chinchwad</div><span class="prog-badge">2 Years</span></div>
+      <div class="prog-card"><div class="prog-name">M.Sc — Computer Applications</div><div class="prog-inst">📍 CSIT, Chinchwad</div><span class="prog-badge">2 Years</span></div>
+    </div>
+    <div id="tab-pgdm" class="programs-panel">
+      <div class="prog-card"><div class="prog-name">PGDM — Marketing + AI</div><div class="prog-inst">📍 IBMR, Chinchwad</div><span class="prog-badge">2 Years</span></div>
+      <div class="prog-card"><div class="prog-name">PGDM — HR + AI</div><div class="prog-inst">📍 IBMR, Chinchwad</div><span class="prog-badge">2 Years</span></div>
+      <div class="prog-card"><div class="prog-name">PGDM — Business Analytics + AI</div><div class="prog-inst">📍 IBMR, Chinchwad</div><span class="prog-badge">2 Years</span></div>
+      <div class="prog-card"><div class="prog-name">PGDM — Operations &amp; Supply Chain + AI</div><div class="prog-inst">📍 IBMR, Chinchwad</div><span class="prog-badge">2 Years</span></div>
+      <div class="prog-card"><div class="prog-name">PGDM — International Finance + AI</div><div class="prog-inst">📍 IBMR, Chinchwad</div><span class="prog-badge">2 Years</span></div>
+      <div class="prog-card"><div class="prog-name">PGDM — Agri Business &amp; SCM</div><div class="prog-inst">📍 IBMR, Chinchwad</div><span class="prog-badge">2 Years</span></div>
+      <div class="prog-card"><div class="prog-name">PGDM — Marketing</div><div class="prog-inst">📍 IIBR, Chinchwad</div><span class="prog-badge">2 Years</span></div>
+      <div class="prog-card"><div class="prog-name">PGDM — Finance</div><div class="prog-inst">📍 IIBR, Chinchwad</div><span class="prog-badge">2 Years</span></div>
+      <div class="prog-card"><div class="prog-name">PGDM — Digital Marketing</div><div class="prog-inst">📍 IIBR, Chinchwad</div><span class="prog-badge">2 Years</span></div>
+      <div class="prog-card"><div class="prog-name">PGDM — Pharma Management</div><div class="prog-inst">📍 IIBR, Chinchwad</div><span class="prog-badge">2 Years</span></div>
+    </div>
+    <div id="tab-phd" class="programs-panel">
+      <div class="prog-card"><div class="prog-name">Ph.D in Management</div><div class="prog-inst">📍 IBMR, Chinchwad — Savitribai Phule Pune University</div><span class="prog-badge">3–5 Years</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Why ASM -->
+<section class="section" id="about" style="background: var(--white);">
+  <div class="section-inner">
+    <div class="section-head fade-in">
+      <div class="section-tag">Why Choose ASM</div>
+      <h2 class="section-title">A History of Noted Performance</h2>
+    </div>
+    <div class="why-grid fade-in">
+      <ul class="why-list">
+        <li class="why-item">
+          <div class="why-check">✓</div>
+          <div>
+            <div class="why-text-title">AICTE Approved & University Affiliated</div>
+            <div class="why-text-body">All programs approved by AICTE and affiliated to Savitribai Phule Pune University, ensuring recognized and valued degrees.</div>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">✓</div>
+          <div>
+            <div class="why-text-title">Industry-Integrated Curriculum</div>
+            <div class="why-text-body">Programs designed with Harvard Business Publishing case studies, SAP, AWS, and Microsoft integrations.</div>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">✓</div>
+          <div>
+            <div class="why-text-title">Top 50 Private B-School (IIRF 2025)</div>
+            <div class="why-text-body">Consistently recognized among India's top management institutions with global rankings and awards.</div>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">✓</div>
+          <div>
+            <div class="why-text-title">Global Alumni Network</div>
+            <div class="why-text-body">Over 75,000 alumni spanning 60+ countries, building a powerful global community for career growth.</div>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">✓</div>
+          <div>
+            <div class="why-text-title">250+ Active Recruiters</div>
+            <div class="why-text-body">Strong placement ecosystem with leading companies actively recruiting from ASM campuses every year.</div>
+          </div>
+        </li>
+      </ul>
+      <div class="why-visual">
+        <div class="why-stat"><div class="why-stat-num">42+</div><div class="why-stat-label">Years of Rich Legacy</div></div>
+        <div class="why-stat"><div class="why-stat-num">75K+</div><div class="why-stat-label">Global Alumni</div></div>
+        <div class="why-stat"><div class="why-stat-num">60+</div><div class="why-stat-label">Countries with Alumni</div></div>
+        <div class="why-stat"><div class="why-stat-num">250+</div><div class="why-stat-label">Top Recruiters</div></div>
+        <div class="why-stat" style="grid-column: 1/-1;">
+          <div class="why-stat-num" style="font-size: 32px;">Top 50</div>
+          <div class="why-stat-label">Ranked Private B-School — IIRF 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Awards (Blue section with slider) -->
+<section class="section section-blue" id="awards">
+  <div class="section-inner">
+
+    <div class="section-head fade-in">
+      <div class="section-tag">Recognition</div>
+      <h2 class="section-title">Rankings & Awards</h2>
+      <p class="section-sub">
+        Recognized by India's and the world's most prestigious education bodies.
+      </p>
+    </div>
+
+    <div class="awards-slider-wrap fade-in">
+      <div class="awards-track" id="awardsTrack">
+
+        <div class="award-card">
+          <div class="award-icon">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+          <div class="award-title">Best Education Brand</div>
+          <div class="award-by">The Economic Times</div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-icon">
+            <i class="fa-solid fa-medal"></i>
+          </div>
+          <div class="award-title">Leading Higher Education Group</div>
+          <div class="award-by">BERG, Singapore</div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-icon">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div class="award-title">Best Innovative Institute</div>
+          <div class="award-by">WIEF – Education Excellence Award</div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-icon">
+            <i class="fa-solid fa-ranking-star"></i>
+          </div>
+          <div class="award-title">Business School of the Year (West)</div>
+          <div class="award-by">Higher Ed Award — Presented by TCS iON</div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div class="award-title">Most Preferred B-School for Placements</div>
+          <div class="award-by">Employability Skills — ASSOCHAM</div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-icon">
+            <i class="fa-solid fa-crown"></i>
+          </div>
+          <div class="award-title">Top 50 Private B-School</div>
+          <div class="award-by">IIRF Rankings 2025</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="awards-arrows">
+      <button class="aw-arrow" onclick="awardSlide(-1)">‹</button>
+      <button class="aw-arrow" onclick="awardSlide(1)">›</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Partners -->
+<section class="section section-alt" id="partners">
+  <div class="section-inner">
+
+    <div class="section-head fade-in">
+      <div class="section-tag">Partners & Affiliations</div>
+      <h2 class="section-title">Powering Education with Global Partners</h2>
+      <p class="section-sub">
+        Collaborating with leading universities, technology companies and global education partners.
+      </p>
+    </div>
+
+    <div class="partners-track-wrap fade-in">
+      <div class="partners-track">
+
+        <!-- <div class="partner-logo">
+          <img src="image/partners/sppu.png" alt="SPPU">
+        </div> -->
+
+        <div class="partner-logo">
+          <img src="image/Artboard 14.png" alt="IIMBx">
+        </div>
+
+        <div class="partner-logo">
+          <img src="image/Artboard 71.png" alt="Amazon AWS">
+        </div>
+
+        <div class="partner-logo">
+          <img src="image/Artboard 17.png" alt="Microsoft">
+        </div>
+
+        <!-- <div class="partner-logo">
+          <img src="image/Artboard 21.png" alt="University of Phoenix">
+        </div> -->
+
+        <div class="partner-logo">
+          <img src="image/Artboard 29.png" alt="CETYS University">
+        </div>
+
+        <div class="partner-logo">
+          <img src="image/Artboard 48.png" alt="Harvard Business Publishing">
+        </div>
+
+        <div class="partner-logo">
+          <img src="image/Artboard 21.png" alt="SAP">
+        </div>
+
+        <!-- Duplicate for seamless loop -->
+
+        <!-- <div class="partner-logo">
+          <img src="image/partners/sppu.png" alt="SPPU">
+        </div> -->
+
+        <div class="partner-logo">
+          <img src="image/Artboard 14.png" alt="IIMBx">
+        </div>
+
+        <div class="partner-logo">
+          <img src="image/Artboard 71.png" alt="Amazon AWS">
+        </div>
+
+        <div class="partner-logo">
+          <img src="image/Artboard 17.png" alt="Microsoft">
+        </div>
+
+        <!-- <div class="partner-logo">
+          <img src="image/Artboard 21.png" alt="University of Phoenix">
+        </div> -->
+
+        <div class="partner-logo">
+          <img src="image/Artboard 29.png" alt="CETYS University">
+        </div>
+
+        <div class="partner-logo">
+          <img src="image/Artboard 48.png" alt="Harvard Business Publishing">
+        </div>
+
+        <div class="partner-logo">
+          <img src="image/Artboard 21.png" alt="SAP">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- Events -->
+<section class="section" id="events">
+  <div class="section-inner">
+
+    <div class="section-head fade-in">
+      <div class="section-tag">Campus Life</div>
+      <h2 class="section-title">Events & Happenings</h2>
+      <p class="section-sub">
+        From international conferences to cultural fests, ASM offers a rich and vibrant campus experience.
+      </p>
+    </div>
+
+    <div class="events-grid fade-in">
+
+      <!-- Seminar Card -->
+      <div class="event-card">
+        <img
+          src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80"
+          alt="Seminars and Workshops"
+          class="event-img"
+        >
+
+        <div class="event-body">
+          <div class="event-name">Seminars & Workshops</div>
+
+          <div class="event-desc">
+            Industry-led seminars, guest lectures, expert talks and workshops that bridge academics with practical business knowledge.
+          </div>
+
+          <a
+            href="https://www.asmgroup.edu.in/"
+            target="_blank"
+            class="event-link"
+          >
+            Explore →
+          </a>
+        </div>
+      </div>
+
+      <!-- Placement Card -->
+      <div class="event-card">
+        <img
+          src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
+          alt="Placement Drive"
+          class="event-img"
+        >
+
+        <div class="event-body">
+          <div class="event-name">Placement Drive</div>
+
+          <div class="event-desc">
+            250+ recruiters, campus interviews, internships, live projects and career opportunities with leading companies.
+          </div>
+
+          <a
+            href="https://www.asmgroup.edu.in/"
+            target="_blank"
+            class="event-link"
+          >
+            See Companies →
+          </a>
+        </div>
+      </div>
+
+      <!-- Cultural Card -->
+      <div class="event-card">
+       <img
+  src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1200&q=80"
+  alt="Extra Curricular Activities"
+  class="event-img"
+>
+
+
+
+        <div class="event-body">
+          <div class="event-name">Extra-Curricular Activities</div>
+
+          <div class="event-desc">
+            Cultural festivals, sports competitions, leadership programs, clubs and community engagement activities.
+          </div>
+
+          <a
+            href="https://www.asmgroup.edu.in/"
+            target="_blank"
+            class="event-link"
+          >
+            Explore →
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- Testimonials -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-head fade-in">
+      <div class="section-tag">Industry Voices</div>
+      <h2 class="section-title">Message From Industry Stalwarts</h2>
+    </div>
+    <div class="testi-slider fade-in">
+      <div class="testi-wrap">
+        <div class="testi-track" id="testiTrack">
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">There are global challenges now for the Indian entrepreneur and this leads to an increasing emphasis on self confidence in young executives. I am happy to note that ASM is focusing effectively on such contemporary issues.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">AK</div>
+              <div>
+                <div class="testi-name">Mr. Atul Kirloskar</div>
+                <div class="testi-role">Chairman, Kirloskar Group of Companies</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">From my interaction with students at ASM I am sure that they will be able to take on the challenges of the corporate world successfully. They are young, intelligent, groomed by expert faculty and exposed to extremely helpful seminars and business events.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">MM</div>
+              <div>
+                <div class="testi-name">Mr. Mukesh Malhotra</div>
+                <div class="testi-role">President – MCCIA, MD, Weikfield Products Co.</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">Pune has to continue to give to the industry human resources trained in international business because that is going to be a major area of operations for companies big and small. ASM has a clear focus in this area and has been extremely successful.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">RP</div>
+              <div>
+                <div class="testi-name">Mr. Ravi Pandit</div>
+                <div class="testi-role">Chairman, KPIT Infosystems Ltd.</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">The demand for internationally trained managers will give the institute a guarantee for success. Because of their experience and contacts in Pune, MCCIA and ASM will be able to assume adequate management and good acceptance in the local economy.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">HS</div>
+              <div>
+                <div class="testi-name">Hon. Henning Scherf</div>
+                <div class="testi-role">Chief Minister, Bremen, Germany</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-dots">
+        <button class="testi-dot active" onclick="testiGoTo(0)"></button>
+        <button class="testi-dot" onclick="testiGoTo(1)"></button>
+        <button class="testi-dot" onclick="testiGoTo(2)"></button>
+        <button class="testi-dot" onclick="testiGoTo(3)"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- News -->
+<section class="section" id="news">
+  <div class="section-inner">
+    <div class="section-head fade-in">
+      <div class="section-tag">Latest</div>
+      <h2 class="section-title">News & Announcements</h2>
+    </div>
+    <div class="news-grid fade-in">
+      <div class="news-card">
+        <div class="news-date">January 17, 2026</div>
+        <div class="news-title">ASM INCON 2026 International Conference Announced</div>
+        <div class="news-body">Audyogik Shikshan Mandal (ASM) announces ASM INCON 2026 — an upcoming International Conference bringing together global scholars and industry experts.</div>
+      </div>
+      <div class="news-card">
+        <div class="news-date">February 2026</div>
+        <div class="news-title">Notice of Governing Body Meeting — 23rd Feb 2026</div>
+        <div class="news-body">All Governing Body Members are informed that the Governing Body meeting is scheduled on 23.02.2026 at 1pm at MIDC Chinchwad, Pune.</div>
+      </div>
+      <div class="news-card">
+        <div class="news-date">Admissions 2025-26</div>
+        <div class="news-title">Admissions Open — MBA, PGDM, MCA, B.E & More</div>
+        <div class="news-body">Admissions are now open across all ASM Group institutes. Apply today for MBA, PGDM, MCA, B.E, BCA, B.Sc and other programs for the academic year 2025-26.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact
+<section class="section section-alt" id="contact">
+  <div class="section-inner">
+    <div class="section-head fade-in">
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title">Let Us Help You Make the Right Career Decision</h2>
+    </div>
+    <div class="contact-grid fade-in">
+      <div class="contact-info">
+        <h3 style="font-family: var(--font-head); font-size: 22px; color: var(--blue-deep); margin-bottom: 8px;">Visit Our Campus</h3>
+        <p style="font-size: 14.5px; color: var(--gray-500); line-height: 1.7; margin-bottom: 24px;">We are located in the heart of Pune's industrial and educational hub. Come meet us and explore our world-class facilities.</p>
+        <div class="ci-item">
+          <div class="ci-icon">📍</div>
+          <div>
+            <div class="ci-label">Address</div>
+            <div class="ci-value">Audyogik Shikshan Mandal<br>MIDC, Block 'C', Chinchwad<br>Pune — 411019, Maharashtra</div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">📞</div>
+          <div>
+            <div class="ci-label">Phone</div>
+            <div class="ci-value">
+              <a href="tel:+912027475090">+91-20-27475090</a> |
+              <a href="tel:+912027478666">+91-20-27478666</a><br>
+              <a href="tel:+919422009207">9422009207</a> / <a href="tel:+919422009210">9422009210</a>
+            </div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">📧</div>
+          <div>
+            <div class="ci-label">Email</div>
+            <div class="ci-value"><a href="mailto:enquiry@asmedu.org">enquiry@asmedu.org</a></div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">🕐</div>
+          <div>
+            <div class="ci-label">Office Hours</div>
+            <div class="ci-value">Monday – Saturday: 9:00 AM – 5:30 PM</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 12px; margin-top: 8px;">
+          <a href="https://www.facebook.com/share/1BqteQcZco/" target="_blank" style="background: var(--blue-main); color: white; padding: 10px 20px; border-radius: 9px; text-decoration: none; font-size: 14px; font-weight: 600;">Facebook</a>
+          <a href="https://www.linkedin.com/school/audyogik-shikshan-mandals-institute-of-business-ma/" target="_blank" style="background: var(--blue-deep); color: white; padding: 10px 20px; border-radius: 9px; text-decoration: none; font-size: 14px; font-weight: 600;">LinkedIn</a>
+          <a href="https://www.youtube.com/@ASMGroupofInstitutes" target="_blank" style="background: #dc2626; color: white; padding: 10px 20px; border-radius: 9px; text-decoration: none; font-size: 14px; font-weight: 600;">YouTube</a>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-title">Admission Enquiry</div>
+        <div class="form-sub">Fill in the form and our admissions team will get back to you within 24 hours.</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name *</label>
+            <input type="text" class="form-control" placeholder="Rahul">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name *</label>
+            <input type="text" class="form-control" placeholder="Sharma">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address *</label>
+          <input type="email" class="form-control" placeholder="rahul@example.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mobile Number *</label>
+          <input type="tel" class="form-control" placeholder="+91 98765 43210">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Program of Interest *</label>
+          <select class="form-control">
+            <option value="">— Select a Program —</option>
+            <option>MBA</option>
+            <option>PGDM — Marketing + AI</option>
+            <option>PGDM — HR + AI</option>
+            <option>PGDM — Business Analytics + AI</option>
+            <option>PGDM — Finance</option>
+            <option>MCA</option>
+            <option>B.E — Computer Science</option>
+            <option>B.E — AI &amp; Machine Learning</option>
+            <option>BCA</option>
+            <option>BBA</option>
+            <option>B.Sc — Computer Science</option>
+            <option>M.Sc — Data Science</option>
+            <option>Ph.D — Management</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-control" rows="3" placeholder="Tell us about your academic background and goals..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="submitForm(this)">Send Enquiry →</button>
+        <p style="font-size: 12px; color: var(--gray-500); text-align: center; margin-top: 12px;">By submitting, you agree to be contacted by ASM regarding admissions.</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <div style="width: 44px; height: 44px; background: rgba(255,255,255,0.12); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: var(--font-head); color: white; font-size: 18px; font-weight: 700;">ASM</div>
+          <div class="footer-brand-name">ASM Group of Institutes</div>
+        </div>
+        <p class="footer-brand-sub">Audyogik Shikshan Mandal — providing quality KG to PG education in Pune for over 42 years. AICTE approved, University affiliated.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/share/1BqteQcZco/" class="social-btn" target="_blank">f</a>
+          <a href="https://www.linkedin.com/school/audyogik-shikshan-mandals-institute-of-business-ma/" class="social-btn" target="_blank">in</a>
+          <a href="https://www.youtube.com/@ASMGroupofInstitutes" class="social-btn" target="_blank">▶</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Institutes</div>
+        <ul class="footer-links">
+          <li><a href="https://www.asmibmr.edu.in/" target="_blank">IBMR</a></li>
+          <li><a href="https://www.iibr.edu.in" target="_blank">IIBR</a></li>
+          <li><a href="https://www.ips.edu.in/" target="_blank">IPS</a></li>
+          <li><a href="https://www.asmnext.edu.in/" target="_blank">NEXTGEN Campus</a></li>
+          <li><a href="https://www.csit.edu.in/" target="_blank">CSIT</a></li>
+          <li><a href="#" target="_blank">GEMS School</a></li>
+          <li><a href="https://asmempros.com/" target="_blank">EMPROS</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Programs</div>
+        <ul class="footer-links">
+          <li><a href="#">MBA</a></li>
+          <li><a href="#">PGDM</a></li>
+          <li><a href="#">MCA</a></li>
+          <li><a href="#">B.E — Engineering</a></li>
+          <li><a href="#">BCA / BBA</a></li>
+          <li><a href="#">B.Sc Courses</a></li>
+          <li><a href="#">Ph.D — Management</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#about">About ASM</a></li>
+          <li><a href="#awards">Rankings & Awards</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#contact">Admissions</a></li>
+          <li><a href="https://www.asmgroup.edu.in/asm/incon/index.php" target="_blank">INCON 2026</a></li>
+          <li><a href="mailto:enquiry@asmedu.org">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Copyright © 2026 ASM Group of Institutes. All Rights Reserved.</span>
+      <span>MIDC Block C, Chinchwad, Pune 411019 | enquiry@asmedu.org | +91-20-27475090</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Hero Slider
+let heroIdx = 0;
+const heroSlides = document.querySelectorAll('.slide');
+const heroDots = document.querySelectorAll('.dot');
+let heroTimer = setInterval(() => heroSlide(1), 5000);
+
+function heroGoTo(n) {
+  heroSlides[heroIdx].classList.remove('active');
+  heroDots[heroIdx].classList.remove('active');
+  heroIdx = (n + heroSlides.length) % heroSlides.length;
+  heroSlides[heroIdx].classList.add('active');
+  heroDots[heroIdx].classList.add('active');
+  clearInterval(heroTimer);
+  heroTimer = setInterval(() => heroSlide(1), 5000);
+}
+function heroSlide(dir) { heroGoTo(heroIdx + dir); }
+
+// Awards Slider
+let awardIdx = 0;
+const awardTrack = document.getElementById('awardsTrack');
+const awardCards = awardTrack.querySelectorAll('.award-card');
+const visibleAwards = 3;
+
+function awardSlide(dir) {
+  const max = awardCards.length - visibleAwards;
+  awardIdx = Math.max(0, Math.min(awardIdx + dir, max));
+  const w = awardCards[0].offsetWidth + 20;
+  awardTrack.style.transform = `translateX(-${awardIdx * w}px)`;
+}
+
+// Testimonials Slider
+let testiIdx = 0;
+const testiTrack = document.getElementById('testiTrack');
+const testiDots = document.querySelectorAll('.testi-dot');
+let testiTimer = setInterval(() => testiGoTo((testiIdx + 1) % 4), 6000);
+
+function testiGoTo(n) {
+  testiDots[testiIdx].classList.remove('active');
+  testiIdx = n;
+  testiDots[testiIdx].classList.add('active');
+  testiTrack.style.transform = `translateX(-${testiIdx * 100}%)`;
+  clearInterval(testiTimer);
+  testiTimer = setInterval(() => testiGoTo((testiIdx + 1) % 4), 6000);
+}
+
+// Program Tabs
+function showTab(tab) {
+  document.querySelectorAll('.programs-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// Mobile Menu
+function toggleMobileMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// Form Submit
+function submitForm(btn) {
+  btn.textContent = '✓ Enquiry Sent! We will contact you soon.';
+  btn.style.background = '#16a34a';
+  btn.disabled = true;
+}
+
+// Scroll Fade In
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+
+<!-- //stat bar -->
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const counters = document.querySelectorAll(".stat-num");
+
+  const animateCounter = (counter) => {
+    const target = parseInt(counter.dataset.target);
+    let current = 0;
+
+    const duration = 3000; // 3 seconds
+    const steps = 120;
+    const increment = target / steps;
+    const stepTime = duration / steps;
+
+    const timer = setInterval(() => {
+      current += increment;
+
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+
+      counter.innerHTML =
+        (target >= 1000
+          ? Math.floor(current).toLocaleString()
+          : Math.floor(current))
+        + "<sup>+</sup>";
+
+    }, stepTime);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => observer.observe(counter));
+
+});
+</script>
+</body>
+</html>
